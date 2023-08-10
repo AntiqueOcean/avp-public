@@ -6,126 +6,55 @@
     <meta name="keywords" content="viedo player, media player, player, video, linux, ubuntu, mint, amtiqueocean">
     <meta name="author" content="Muhammad Ali Kalantari [antiqueOcean]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVP</title>
+    <title>AVP | Antique Video Player</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <style>
-        :root {
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
-        body {
-            background-color: white;
-            padding: 16px;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-        section {
-            width: 80%;
-            max-width: 1020px;
-            overflow-x: hidden;
-            display: flex;
-            gap: 8px;
-            align-self: flex-start;
-            position: absolute;
-            margin: auto;
-            justify-content: center;
-            flex-wrap: wrap;
-            box-sizing: border-box;
-        }
-        section > h1 {
-            align-self: center;
-            background-color: rgb(244, 244, 244);
-            width: 100%;
-            text-align: center;
-            padding: 16px;
-            margin: 0;
-            border-radius: 8px;
-            color: #323232;
-            box-sizing: border-box;
-            font-size: x-large;
-            border: 1px solid #aaa;
-        }
-        section > h2 {
-            align-self: center;
-            background-color: rgb(250, 250, 250);
-            width: 100%;
-            text-align: center;
-            padding: 8px;
-            margin: 0;
-            border-radius: 8px;
-            color: #565656;
-            box-sizing: border-box;
-            font-size: large;
-            border: 1px solid #ccc;
-        }
-        section > .img-container{
-            width: 100%;
-            height: min-content;
-            justify-content: center;
-            display: flex;
-            box-sizing: border-box;
-            margin: 0;
-        }
-        section > .img-container > img {
-            max-width: 70%;
-            max-height: 70%;
-            width: auto;
-            height: auto;
-        }
-        section > span{
-            margin: 0;
-            width: auto;
-            height: auto;
-            padding: 6px 12px;
-            font-size: medium;
-            background-color: rgb(240, 240, 240);
-            border: 1px solid rgb(200, 200, 200);
-            color: rgb(20, 20, 20);
-            align-self: center;
-            border-radius: 6px;
-            gap: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            flex-wrap: wrap;
-        }
-
-        section > span > button{
-            width: max-content;
-            height: max-content;
-            padding: 6px 12px;
-            font-size: medium;
-            background-color: rgb(250, 250, 250);
-            border: 1px solid rgb(220, 220, 220);
-            color: rgb(20, 20, 20);
-            align-self: center;
-            border-radius: 6px;
-            cursor: pointer;
-            box-sizing: border-box;
-        }
-
-        section > span > button:hover{
-            text-decoration: underline;
-            border: 1px solid rgb(160, 160, 160);
-
-        }
-
-    </style>
-    <section>
-        <h1>antique Video Player</h1>
-        <h2>free and cross platform video player for Desktop <br/><small>(Linux/<s>Windows</s>/<s>Mac</s></small>)</h2>
-        <div class="img-container">
-            <img src="styles/images/demo.png"></img>
-        </div>
-
-        <span style="width: 70%; box-sizing: border-box;">Downlaod <small>[version: 0.1<b>-alpha</b>]</small>
+    <div class="upper-bar">
+        <section>
+            <cite>
+                <img src="/styles/images/icon.png"/>
+                <h1>antique</h1>
+                <h2>Video Player</h2>
+            </cite>
+            <hr/>
+            <div class="buttons">
+                <button>Projects</button>
+                <button>Contact</button>
+                <button>Donate</button>
+                <button>About</button>
+            </div>
+            <hr/>
+            <div class="DownloadButton">
+                Download
+            </div>
+        </section>
+    </div>
+    <div class="header">
+        <section>
+            <cite>
+                <h1>Play it with <u>ease</u>,</h1>
+                <h2>everywhere!</h2>
+                <span>with a modern interface and modern features, targeting linux desktop users.</span>
+                <div class="buttons">
+                    <button>mp4</button>
+                    <button style="--accent: rgb(81, 155, 81); --accent-hover: rgb(113, 167, 113);">mkv</button>
+                    <button style="--accent: rgb(120, 120, 120); --accent-hover:rgb(138, 138, 138);">avi</button>
+                    <button>ogg</button>
+                    <button style="--accent: rgb(81, 155, 81); --accent-hover: rgb(113, 167, 113);">mpg</button>
+                    <button style="--accent: rgb(120, 120, 120); --accent-hover:rgb(138, 138, 138);">wmv</button>
+                    <button>...</button>
+                </div>
+                <sub>+ avp uses video.js</sub>
+            </cite>
+            <hr/>
+        </section>
+    </div>
+<!--
+            <span style="width: 70%; box-sizing: border-box;">Downlaod <small>[version: 0.1<b>-alpha</b>]</small>
         <button onclick="window.open('download/deb/x64/avp_0.1~alpha_amd64.deb');">Linux amd64 (deb)</button>
         <button onclick="window.open('download/rpm/x64/avp-0.1.alpha-1.x86_64.rpm', '_blank');">Linux amd64 (rpm)</button>
         </span>
-
         <span style="width: 70%; box-sizing: border-box;">Support <small>click to copy adress</small>
             <button onclick="navigator.clipboard.writeText('bc1qgsgzg4pqxer9f5xdfdksdh62w0hjhh8t77yl2h');">Bitcoin</button>
             <button onclick="navigator.clipboard.writeText('0x9C5a731aA44af5D91F147C2522549c498628f17B');">Ethereum</button>
@@ -138,8 +67,6 @@
             <button onclick="window.open('https://t.me/antiqueocean/', '_blank');">telegram</button>
             <button onclick="location.href = 'mailto:antiqueocean.dev@gmail.com';">mail</button>
         </span>
-
-    </section>
-
+    -->
 </body>
 </html>

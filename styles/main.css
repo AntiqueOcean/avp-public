@@ -1,0 +1,289 @@
+@import 'fonts.css';
+
+:root {
+    font-family: Inter;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(240, 240, 240);
+}
+
+.upper-bar {
+    height: auto;
+    background-color: rgb(20, 20, 20);
+    border-bottom: 1px solid rgb(92, 92, 92);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-drag: none;
+    position: sticky;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.upper-bar > section {
+    max-width: 1020px;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.upper-bar > section > cite {
+    display: flex;
+    gap: 4px;
+    width: 260px;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    box-sizing: border-box;
+    font-style: normal;
+    height: max-content;
+    padding: 0 16px 0 8px;
+    margin-right: 8px;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.upper-bar > section > cite > img {
+    max-width: 40px;
+    max-height: 40px;
+    align-self: center;
+    filter: none;
+    transition-duration: 0.2s;
+    margin-right: 4px;
+    margin-left: 0px;
+}
+
+.upper-bar > section > cite:hover > img {
+    margin-right: 0px;
+    margin-left: 4px;
+}
+
+.upper-bar > section > hr {
+    margin: none;
+    margin-left: 8px;
+    margin-right: 8px;
+    border: none;
+    border-right: 1px dashed rgb(128, 128, 128);
+}
+
+.upper-bar > section > cite > h1 {
+    font-size: large;
+    color: rgb(218, 218, 218);
+    font-weight: 400;
+    margin: none;
+    padding: none;
+    align-self: center;
+    transition-duration: 0.1s;
+}
+
+.upper-bar > section > cite:hover > h1 {
+    color: white;
+}
+
+.upper-bar > section > cite > h2 {
+    font-size: larger;
+    color: white;
+    font-weight: 600;
+    margin: none;
+    padding: none;
+    align-self: center;
+}
+
+.upper-bar > section > .buttons {
+    display: flex;
+    gap: 4px;
+    box-sizing: border-box;
+    height: auto;
+    flex: 1 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.upper-bar > section > .buttons > button {
+    display: flex;
+    gap: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-size: medium;
+    outline: none;
+    border: none;
+    color:rgb(218, 218, 218);
+    cursor: pointer;
+}
+
+.upper-bar > section > .buttons > button::before {
+    content: '[';
+    opacity: 0;
+}
+
+.upper-bar > section > .buttons > button:hover::before {
+    content: '[';
+    opacity: 100%;
+}
+
+.upper-bar > section > .buttons > button:hover {
+    color:rgb(255, 255, 255);
+}
+
+.upper-bar > section > .buttons > button::after {
+    content: ']';
+    opacity: 0;
+}
+
+.upper-bar > section > .buttons > button:hover::after {
+    content: ']';
+    opacity: 100%;
+}
+
+.upper-bar > section > .DownloadButton {
+    display: flex;
+    gap: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-size: medium;
+    outline: none;
+    border: none;
+    color: rgb(230, 230, 230);
+    cursor: pointer;
+    padding: 6px 12px;
+    align-self: center;
+    background: linear-gradient(45deg, #634ab6, #8b74d8);
+    border-radius: 4px;
+    transition-duration: 0.2s;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.upper-bar > section > .DownloadButton:hover {
+    padding: 6px 16px;
+    margin-left: 0;
+    margin-right: 0;
+    color: white;
+}
+
+.header {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(-45deg, #323232, #202020);
+    display: flex;
+    justify-content: center;
+}
+
+.header > section{
+    width: 100%;
+    max-width: 1020px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.header > section > cite{
+    max-width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-basis: content;
+    align-content: flex-start !important;
+    overflow: hidden;
+    height: max-content;
+    align-self: center;
+}
+
+.header > section > cite > h1{
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    font-weight: 200;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 2px 4px black;
+    width: 100%;
+    text-align: right;
+}
+
+.header > section > cite > h2{
+    color: rgb(220, 220, 220);
+    font-size: xx-large;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 2px 4px black;
+    width: 100%;
+    text-align: right;
+}
+
+.header > section > cite > span{
+    color: rgb(190, 190, 190);
+    font-size: large;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 2px 4px black;
+    width: 100%;
+    white-space: wrap;
+    word-wrap: normal;
+    text-align: justify;
+}
+.header > section > cite > .buttons {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+}
+.header > section > cite > .buttons > button {
+    background-color: var(--accent, #7965bb);
+    padding: 4px 12px;
+    font-size: medium;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    align-self: stretch;
+    height: auto;
+    color: rgb(240, 240, 240);
+    border-radius: 2px;
+    transition-duration: 0.1s;
+    flex: 1 1;
+}
+
+.header > section > cite > .buttons > button:hover {
+    background-color: var(--accent-hover, #8b74d8);
+    margin-inline: 0;
+    color: white;
+    padding: 4px 16px;
+}
+
+.header > section > cite > sub {
+    color: rgb(160, 160, 160);
+    font-style: normal;
+    font-size: medium;
+    font-weight: 300;
+}
+
+.header > section > hr {
+    margin: none;
+    margin-left: 16px;
+    margin-right: 8px;
+    border: none;
+    border-right: 1px dashed rgb(128, 128, 128);
+}
