@@ -1,7 +1,7 @@
 @import '/styles/fonts.css';
 
 :root {
-    font-family: Inter;
+    font-family: Inter !important;
 }
 
 body {
@@ -9,6 +9,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(240, 240, 240);
+    font-family: Inter !important;
 }
 
 .upper-bar {
@@ -461,12 +462,14 @@ body > .content > section {
     margin: 16px auto;
     gap: 8px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    font-family: Inter;
 }
 
 body > .content {
     width: 100%;
     box-sizing: border-box;
     padding-inline: 16px;
+    font-family: Inter;
 }
 
 body > .content > section ::selection{
