@@ -7,7 +7,10 @@
     <meta name="author" content="Muhammad Ali Kalantari [antiqueOcean]">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AVP | Antique Video Player</title>
+    <link rel="icon" type="image/x-icon" href="styles/images/icon.png">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/prefixfree.min.js" ></script>
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <div class="upper-bar">
@@ -19,13 +22,13 @@
             </cite>
             <hr/>
             <div class="buttons">
-                <button>Projects</button>
-                <button>Contact</button>
-                <button>Donate</button>
-                <button>About</button>
+                <button onclick="scrollto('donate')">Donate</button>
+                <button onclick="scrollto('contact')">Contact</button>
+                <button onclick="scrollto('about')">About</button>
+                <button onclick="window.open('https://antiqueocean.github.io/', '_blank');">Other Projects</button>
             </div>
             <hr/>
-            <div class="DownloadButton">
+            <div onclick="scrollto('download')" class="DownloadButton">
                 Download
             </div>
         </section>
@@ -36,37 +39,176 @@
                 <h1>Play it with <u>ease</u>,</h1>
                 <h2>everywhere!</h2>
                 <span>antique video player, with a modern interface and modern features for desktop.</span>
-                <div class="buttons">
-                    <button>mp4</button>
-                    <button style="--accent: rgb(81, 155, 81); --accent-hover: rgb(113, 167, 113);">mkv</button>
-                    <button style="--accent: rgb(120, 120, 120); --accent-hover:rgb(138, 138, 138);">avi</button>
-                    <button>ogg</button>
-                    <button style="--accent: rgb(81, 155, 81); --accent-hover: rgb(113, 167, 113);">mpg</button>
-                    <button style="--accent: rgb(120, 120, 120); --accent-hover:rgb(138, 138, 138);">wmv</button>
-                    <button>...</button>
-                </div>
+                <ul>
+                    <li>mp4</li>
+                    <li style="--accent: rgb(81, 155, 81); --accent-hover: rgb(113, 167, 113);">mkv</li>
+                    <li style="--accent: rgb(120, 120, 120); --accent-hover:rgb(138, 138, 138);">avi</li>
+                    <li>ogg</li>
+                    <li style="--accent: rgb(81, 155, 81); --accent-hover: rgb(113, 167, 113);">mpg</li>
+                    <li style="--accent: rgb(120, 120, 120); --accent-hover:rgb(138, 138, 138);">wmv</li>
+                    <li>...</li>
+                </ul>
+                <sub>POWERED BY <a href="https://antiqueocean.github.io/" target="_blank" style="color: inherit;">antiqueOCEAN</a></sub>
                 <sub>+ avp uses video.js</sub>
             </cite>
             <hr/>
+            <ul>
+                <li style="--image1:url(styles/images/demo.png); --image2:url(styles/images/demo2.png); --image3:url(styles/images/demo3.png);"></li>
+            </ul>
         </section>
     </div>
-<!--
-            <span style="width: 70%; box-sizing: border-box;">Downlaod <small>[version: 0.1<b>-alpha</b>]</small>
-        <button onclick="window.open('download/deb/x64/avp_0.1~alpha_amd64.deb');">Linux amd64 (deb)</button>
-        <button onclick="window.open('download/rpm/x64/avp-0.1.alpha-1.x86_64.rpm', '_blank');">Linux amd64 (rpm)</button>
-        </span>
-        <span style="width: 70%; box-sizing: border-box;">Support <small>click to copy adress</small>
-            <button onclick="navigator.clipboard.writeText('bc1qgsgzg4pqxer9f5xdfdksdh62w0hjhh8t77yl2h');">Bitcoin</button>
-            <button onclick="navigator.clipboard.writeText('0x9C5a731aA44af5D91F147C2522549c498628f17B');">Ethereum</button>
-            <button onclick="navigator.clipboard.writeText('TDumMYDtUABW4E2aqj3GxhUaehb3NAKeHH');">Tron</button>
-        </span>
-
-        <span style="width: 70%; box-sizing: border-box;">Contact
-            <button onclick="window.open('https://github.com/antiqueOcean/', '_blank');">Github</button>
-            <button onclick="window.open('https://antiqueocean.github.io/', '_blank');">WebPage</button>
-            <button onclick="window.open('https://t.me/antiqueocean/', '_blank');">telegram</button>
-            <button onclick="location.href = 'mailto:antiqueocean.dev@gmail.com';">mail</button>
-        </span>
-    -->
+    <div class="scroll-indicator">
+        <div id="scrollPercent" class="left"></div>
+        <div class="middle">
+            <div id="scrollBar" class="bar">
+                
+            </div>
+        </div>
+        <div class="right">100%</div>
+    </div>
+    <div class="content">
+        <section id="donate">
+            <h1>Donate<small style="margin-left: 8px; font-size: medium;">your help goes far...</small></h1>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#e98205; --accent-text: white">
+                <img src="styles/images/bitcoin.png"/>
+                <cite>
+                    <span>Btc</span>
+                    <span><small style="user-select: none;">wallet: </small>bc1qgsgzg4pqxer9f5xdfdksdh62w0hjhh8t77yl2h</span>
+                </cite>
+                <button onclick="navigator.clipboard.writeText('s'); alert('copied:\nbc1qgsgzg4pqxer9f5xdfdksdh62w0hjhh8t77yl2h');">Copy</button>
+            </div>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#627eea; --accent-text: white">
+                <img src="styles/images/ethereum.png"/>
+                <cite>
+                    <span>Eth</span>
+                    <span><small style="user-select: none;">wallet: </small>0x9C5a731aA44af5D91F147C2522549c498628f17B</span>
+                </cite>
+                <button onclick="navigator.clipboard.writeText('0x9C5a731aA44af5D91F147C2522549c498628f17B'); alert('copied:\n0x9C5a731aA44af5D91F147C2522549c498628f17B');">Copy</button>
+            </div>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#eb322a; --accent-text: white">
+                <img src="styles/images/tron.png"/>
+                <cite>
+                    <span>Trx</span>
+                    <span><small style="user-select: none;">wallet: </small>TDumMYDtUABW4E2aqj3GxhUaehb3NAKeHH</span>
+                </cite>
+                <button onclick="navigator.clipboard.writeText('TDumMYDtUABW4E2aqj3GxhUaehb3NAKeHH'); alert('copied:\nTDumMYDtUABW4E2aqj3GxhUaehb3NAKeHH');">Copy</button>
+            </div>
+        </section>
+        <section id="download" style="--section-bg-color: #525252; --section-text-color: #f3f3f3">
+            <h1>Download</h1>
+            <h2><small>version: </small>0.1-alpha</h2>
+            <hr/>
+            <h2>warning:<br/>Avp is in alpha stage and not ready for day to day use.</h2>
+            <div class="item" style="--accent: #d70751; --accent-text: white;">
+                <img src="styles/images/debian.png"/>
+                <cite>
+                    <span>.deb x64</span>
+                    <span>[64bit] Debian/Ubuntu/Mint</span>
+                </cite>
+                <button style="--accent: #808080;">older versions</button>
+                <button onclick="window.open('download/deb/x64/avp_0.1~alpha_amd64.deb');">Download</button>
+            </div>
+            <div class="item" style="--accent: #808080; --accent-text: white;">
+                <img src="styles/images/debian.png"/>
+                <cite>
+                    <span>.deb x32</span>
+                    <span>[32bit] Debian/Ubuntu/Mint</span>
+                </cite>
+                <button>not available</button>
+            </div>
+            <div class="item" style="--accent: #507cda; --accent-text: white;">
+                <img src="styles/images/fedora.png"/>
+                <cite>
+                    <span>.rpm x64</span>
+                    <span>[64bit] Fedora/CentOS/OpenSUSE</span>
+                </cite>
+                <button style="--accent: #808080;">older versions</button>
+                <button onclick="window.open('download/rpm/x64/avp-0.1.alpha-1.x86_64.rpm', '_blank');">Download</button>
+            </div>
+            <div class="item" style="--accent: #808080; --accent-text: white;">
+                <img src="styles/images/fedora.png"/>
+                <cite>
+                    <span>.rpm x32</span>
+                    <span>[32bit] Fedora/CentOS/OpenSUSE</span>
+                </cite>
+                <button>not available</button>
+            </div>
+            <hr/>
+            <div class="item" style="--accent: #808080; --accent-text: white;">
+                <img src="styles/images/windows.png"/>
+                <cite>
+                    <span>Windows x64</span>
+                    <span>.exe [64bit]</span>
+                </cite>
+                <button>not available</button>
+            </div>
+            <div class="item" style="--accent: #808080; --accent-text: white;">
+                <img src="styles/images/windows.png"/>
+                <cite>
+                    <span>Windows x32</span>
+                    <span>.exe [32bit]</span>
+                </cite>
+                <button>not available</button>
+            </div>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#ef6165; --accent-text: white">
+                <img src="styles/images/email.png"/>
+                <cite>
+                    <span>E-Mail</span>
+                    <span><small style="user-select: none;">gmail </small>antiqueocean.dev@gmail.com</span>
+                </cite>
+                <button onclick="location.href = 'mailto:antiqueocean.dev@gmail.com';">Go</button>
+            </div>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#2fa7da; --accent-text: white">
+                <img src="styles/images/telegram.png"/>
+                <cite>
+                    <span>Telegram</span>
+                    <span><small style="user-select: none;">@</small>antiqueOCEAN</span>
+                </cite>
+                <button onclick="window.open('https://t.me/antiqueocean/', '_blank');">Go</button>
+            </div>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#3d3d3d; --accent-text: white">
+                <img src="styles/images/github.png"/>
+                <cite>
+                    <span>Github</span>
+                    <span><small style="user-select: none;">www.</small>github.com/antiqueOcean</span>
+                </cite>
+                <button onclick="window.open('https://github.com/antiqueOcean/', '_blank');">Go</button>
+            </div>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#dc2d76; --accent-text: white">
+                <img src="styles/images/instagram.png"/>
+                <cite>
+                    <span>Instagram</span>
+                    <span><small style="user-select: none;">@</small>antiqueOCEAN.dev</span>
+                </cite>
+                <button onclick="window.open('https://instagram.com/antiqueocean.dev', '_blank');">Go</button>
+            </div>
+            <div class="item" style="--color: black; --bg-color:#eeeeee; --accent:#737373; --accent-text: white">
+                <img src="styles/images/antiqueocean.png"/>
+                <cite>
+                    <span>WebPage</span>
+                    <span><small style="user-select: none;">www.</small>antiqueocean.github.io</span>
+                </cite>
+                <button onclick="window.open('https://antiqueocean.github.io/', '_blank');">Go</button>
+            </div>
+        </section>
+        <section id="about">
+            <h1>About</h1>
+            <hr/>
+            <br/>
+            <span style="width: 100%;">
+                Hello, my name is Muhammad Ali Kalantari (antiqueOCEAN) and i'm an indie dev. you can follow me and my work on social media from the <a style="cursor: pointer;" onclick="scrollto('contact');">contact section</a> above.
+                <br/>
+                About AVP: 
+                <br/>
+                Avp is a free video player developed with javascript and Electron. it uses Html5 and video.js for handeling audio/video files. you can contribute to this project when it goes open source, but for now try the alpha version.
+            </span>
+        </section>
+    </div>
 </body>
+<footer>
+    @ 2023 Muhammad Ali kalantari. AntiqueOcean © All Rights Reserved.
+</footer>
 </html>
