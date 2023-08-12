@@ -1,7 +1,7 @@
-@import 'fonts.css';
+@import '/styles/fonts.css';
 
 :root {
-    font-family: Inter !important;
+    font-family: 'Inter' !important;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: rgb(240, 240, 240);
-    font-family: Inter !important;
+    font-family: 'Inter' !important;
 }
 
 .upper-bar {
@@ -327,14 +327,14 @@ body {
 
 .header > section > ul > li {
     flex: 1 1;
+    --image1: url(images/demo.png);
+    --image2: url(images/demo2.png);;
+    --image3: url(images/demo3.png);;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: var(--image1);
     background-position: right;
     filter: drop-shadow(0 0 12px black);
-    --image1: none;
-    --image2: none;
-    --image3: none;
 }
 
 @keyframes changeDemoBackground {
@@ -462,14 +462,14 @@ body > .content > section {
     margin: 16px auto;
     gap: 8px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
-    font-family: Inter;
+    font-family: 'Inter';
 }
 
 body > .content {
     width: 100%;
     box-sizing: border-box;
     padding-inline: 16px;
-    font-family: Inter;
+    font-family: 'Inter';
 }
 
 body > .content > section ::selection{
@@ -483,7 +483,7 @@ body > .content > section > h1 {
     margin: 0;
     color: var(--section-text-color, #202020);
     font-size: xx-larger;
-    font-family: Inter-Thin;
+    font-family: 'Inter-Thin';
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -492,7 +492,7 @@ body > .content > section > h2 {
     margin: 0;
     color: var(--section-text-color, #202020);
     font-size: large;
-    font-family: Inter-Thin;
+    font-family: 'Inter-Thin';
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.33);
 }
 
@@ -540,7 +540,7 @@ body > .content > section > .item > cite {
     flex-direction: column;
     padding: 0;
     font-style: normal;
-    font-family: Inter-Light;
+    font-family: 'Inter-Light';
     color: var(--color, white);
     overflow-wrap: break-word;
 }
@@ -566,14 +566,14 @@ body > .content > section > .item > button {
     min-width: 64px;
     padding: 4px 8px;
     font-size: medium;
-    font-family: Inter;
+    font-family: 'Inter';
     background-color: var(--accent, #7965bb);
     color: var(--accent-text, white);
     border: none;
     outline: none;
     border-radius: 4px;
     align-self: stretch;
-    font-family: Inter-Medium;
+    font-family: 'Inter-Medium';
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transition-duration: 0.2s;
