@@ -1,3 +1,28 @@
+@media (max-width: 599px) {
+    body > .content > section > .item {
+        flex-wrap: wrap !important;
+        height: 200px;
+        justify-content: space-around;
+    }
+    body > .content > section > .item > cite {
+        min-width: 100%;
+    }
+    body > .content > section > .item > button {
+        align-self: stretch;
+        width: auto;
+        flex: 1 1;
+    }
+}
+
+@media (min-width: 600px) {
+    body > .content > section > .item {
+        flex-wrap: nowrap;
+    }
+    body > .content > section > .item > cite {
+        min-width: 100px;
+    }
+}
+
 @font-face {
     font-family: 'Inter-Light';
     src: url("fonts/Inter-Light.ttf");
@@ -535,7 +560,7 @@ body > .content > section > hr {
 
 body > .content > section > .item {
     width: 100%;
-    height: min-content;
+    height: auto;
     background-color: var(--bg-color, #262626);
     border-radius: 6px;
     padding: 12px;
@@ -563,6 +588,7 @@ body > .content > section > .item:hover > img {
 
 body > .content > section > .item > cite {
     flex: 1 1;
+    width: 100%;
     align-self: center;
     display: flex;
     flex-wrap: wrap;
