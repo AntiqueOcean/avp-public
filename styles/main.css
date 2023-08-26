@@ -499,7 +499,6 @@ body {
 
 .scroll-indicator > .middle {
     flex: 1 1;
-    
     border-radius: 6px;
     background-image: linear-gradient(to right, #404040 , #a2a2a2);
     border-top: 1px solid #646464;
@@ -507,7 +506,6 @@ body {
     border-bottom: 1px solid #646464;
     padding: 0;
     box-sizing: border-box;
-    transition-duration: 0.15s;
     -webkit-user-drag: none;
     user-select: none;
     padding: 0;
@@ -524,7 +522,6 @@ body {
     box-sizing: border-box;
     -webkit-user-drag: none;
     user-select: none;
-    transition-duration: 0.5s;
 }
 
 .scroll-indicator > .right {
@@ -581,6 +578,12 @@ body > .content > section > h2 {
     font-family: 'Inter-Thin';
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.33);
 }
+
+body > .content > section > span {
+    color: var(--section-text-color, #202020);
+    font-size: medium;
+}
+
 
 body > .content > section > hr {
     width: var(--width, 140px);
